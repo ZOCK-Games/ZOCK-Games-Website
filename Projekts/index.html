@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Projekts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-image: url(../Images/Background.png);
+            background-size: cover;
+            text-align: center;
+            overflow-x: hidden;
+        }
+ .navigationbar {
+                width: 100%;
+                height: 40px;
+                background-color: black;
+                margin: auto 80px;
+                position: fixed 0;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+                user-select: none;
+                display: flex;
+                z-index: 999;
+                position: fixed;
+                top: 0%;
+            }
+            
+
+            .HomeNav {
+                height: 0;
+                width: 100%;
+                color: azure;
+                font-size: 24px;
+                font-family: 'Silkscreen', sans-serif;
+                cursor: pointer;
+                user-select: none;
+            }
+
+        .headlinebox {
+            width: 500px;
+            height: 100px;
+            background-color: rgb(35, 35, 35);
+            border-radius: 12px;
+            margin: 80px auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+        .headlinetext {
+            font-size: 70px;
+            color: rgb(220, 210, 194);
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'Silkscreen', sans-serif;
+        }
+        .projekt-card {
+            margin: 40px auto 0 auto;
+            width: 100%;
+            max-width: 340px;
+            min-height: 120px;
+            background: #222;
+            border: 4px solid #fff;
+            border-radius: 16px;
+            box-shadow: 0 0 16px #000;
+            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+            color: #fff;
+            font-size: 1.2em;
+            display: block;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 #000;
+            padding: 20px;
+            white-space: pre-line; /* Zeilenumbruch aus Textdatei */
+            word-break: break-word;
+            box-sizing: border-box;
+        }
+        .projekt-card a {
+            display: block;
+            margin-top: 8px;
+            word-break: break-all;
+        }
+      #scrollBild {
+      position: fixed;
+      top: 0;
+      right: -1%; /* Hälfte des Bildes außerhalb */
+      height: 200px;
+      width: 100px;
+      rotate: -90deg;
+      cursor: grab;
+      z-index: 1000;
+    }
+    .footer-info {
+        width: 100%;
+        background: #111;
+        color: #fff;
+        font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+        font-size: 1em;
+        padding: 12px 0;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 9999;
+    }
+    .footer-info a {
+        color: #7ecfff;
+        text-decoration: underline;
+        font-family: inherit;
+    }
+    </style>
+</head>
+<body>
+    <div class="navigationbar">
+        <div onclick="location.href='/'" class="HomeNav">Home</div>
+        <div onclick="location.href='/Games'" class="HomeNav">Games</div>
+        <div onclick="location.href='/Projekts'" class="HomeNav">Projekts</div>
+    </div>
+    <div class="headlinebox">
+        <div class="headlinetext">PROJEKTS</div>
+    </div>
+    <div id="projekt-cards-container"></div>
+    <script>
+        // Liste der Textdateien im Ordner Projekts/Texts
+        const projektDateien = [
+            "Projekt1.txt",
+            // Weitere Dateien hier eintragen
+        ];
+
+        const container = document.getElementById("projekt-cards-container");
+
+        projektDateien.forEach(datei => {
+            fetch("Texts/" + datei)
+                .then(response => response.text())
+                .then(text => {
+                    // Ersetze [[Text|URL]] durch einen echten Link
+                    const htmlText = text.replace(/\[\[(.*?)\|(.*?)\]\]/g, '<a href="$2" target="_blank" style="color:lightblue;text-decoration:underline;">$1</a>');
+                    const card = document.createElement("div");
+                    card.className = "projekt-card";
+                    card.innerHTML = htmlText;
+                    container.appendChild(card);
+                });
+        });
+    </script>
+
+                </style>
+            </head>
+
+            <body style="height:2000px;"> <!-- Höhe damit man scrollen kann -->
+
+                <img id="scrollBild" src="../Images/Player_3.png" alt="Bild" />
+
+                <script>
+                    window.addEventListener("scroll", function () {
+                        var bild = document.getElementById("scrollBild");
+
+                        var scrollTop = window.scrollY || window.pageYOffset;
+                        var docHeight = document.body.scrollHeight - window.innerHeight;
+                        var scrollProzent = scrollTop / docHeight;
+
+                        var maxTop = window.innerHeight - bild.offsetHeight;
+                        var neueTop = scrollProzent * maxTop;
+                        bild.style.top = neueTop + "px";
+                    });
+                </script>
+
+            </body>
+
+            </html>
+
+
+        </div>
+
+    </div>
+    <footer class="footer-info">
+    Mail: <a href="mailto:zock868@gmail.com">zock868@gmail.com</a> &nbsp;|&nbsp;
+    Github: <a href="https://github.com/ZOCK8" target="_blank">ZOCK8</a> &nbsp;|&nbsp;
+    Discord: <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
+</footer>
