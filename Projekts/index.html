@@ -118,7 +118,7 @@
 </head>
 <body>
     <div class="navigationbar">
-        <div onclick="location.href='/'" class="HomeNav">Home</div>
+        <div onclick="location.href='/'" class="HomeNav"><u>Home</u></div>
         <div onclick="location.href='/Games'" class="HomeNav">Games</div>
         <div onclick="location.href='/Projekts'" class="HomeNav">Projekts</div>
     </div>
@@ -126,27 +126,13 @@
         <div class="headlinetext">PROJEKTS</div>
     </div>
     <div id="projekt-cards-container"></div>
+    <div class="projekt-card">Jimpu 
+        Prjekt by 
+        ZOCK-GAMES
+        by ZOCK
+        
+    </div>
     <script>
-        // Liste der Textdateien im Ordner Projekts/Texts
-        const projektDateien = [
-            "Projekt1.txt",
-            // Weitere Dateien hier eintragen
-        ];
-
-        const container = document.getElementById("projekt-cards-container");
-
-        projektDateien.forEach(datei => {
-            fetch("Texts/" + datei)
-                .then(response => response.text())
-                .then(text => {
-                    // Ersetze [[Text|URL]] durch einen echten Link
-                    const htmlText = text.replace(/\[\[(.*?)\|(.*?)\]\]/g, '<a href="$2" target="_blank" style="color:lightblue;text-decoration:underline;">$1</a>');
-                    const card = document.createElement("div");
-                    card.className = "projekt-card";
-                    card.innerHTML = htmlText;
-                    container.appendChild(card);
-                });
-        });
     </script>
 
                 </style>

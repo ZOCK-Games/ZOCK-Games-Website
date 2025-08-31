@@ -2,9 +2,10 @@
 <html lang="de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
 
 <head>
     <title>ZOCK-GAMES</title>
@@ -117,6 +118,40 @@
                 font-family: "Silkscreen", sans-serif;
                 color: aliceblue;
             }
+            .box-button {
+            position: absolute;
+            left: 50%;
+            cursor: pointer;
+            width: 35%;
+            border: 4px solid black;
+            background-color: #963f3e;
+            padding-bottom: 10px;
+            transition: 0.1s ease-in-out;
+            user-select: none;
+            z-index: 9999;
+            top: 45%;
+            left: 33%;
+        }
+
+        .button {
+            background-color: #72a11d;
+            border: 4px solid #288d0d;
+            padding: 3px 8px;
+            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+        }
+                .button span,
+        .buttongreen span {
+            color: aliceblue;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+
+        .box-button:active,
+        .box-button-green:active {
+            padding: 0;
+            margin-bottom: 10px;
+            transform: translateY(10px);
+        }
 
 
 
@@ -151,7 +186,14 @@
 
         <div class="Middel">
             <div class="Infos">
-                <div class="InfoText">Hallo Ich Bin ZOCK, <br> Ich Bin Solo Game Developer <br> Aktuel Arbeite ich daran mein erstes mini Spiel rauszubringen Ich Schätze Ich Brauche noch etwa 1 monat bis das spiel gepublisht wird </div>
+                <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 </div>
+                    <div class="box-button">
+                        <div class="button">
+                            <a href="../Jimpu" target="_blank">
+                                <span><b>Jimpu</b></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
 
