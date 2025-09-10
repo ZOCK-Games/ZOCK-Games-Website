@@ -118,9 +118,9 @@
 </head>
 <body>
 <div class="navigationbar">
-    <a href="index.html" class="HomeNav"><u>Home</u></a>
-    <a href="Games/" class="HomeNav">Games</a>
-    <a href="Projekts/" class="HomeNav">Projekts</a>
+    <a href="../index.html" class="HomeNav"><u>Home</u></a>
+    <a href="../Games/index.html" class="HomeNav">Games</a>
+    <a href="./index.html" class="HomeNav">Projekts</a>
 </div>
     <div class="headlinebox">
         <div class="headlinetext">PROJEKTS</div>
@@ -132,40 +132,24 @@
         by ZOCK
         
     </div>
-    <script>
-    </script>
-
-                </style>
-            </head>
-
-            <body style="height:2000px;"> <!-- Höhe damit man scrollen kann -->
-
-                <img id="scrollBild" src="../Images/Player_3.png" alt="Bild" />
-
-                <script>
-                    window.addEventListener("scroll", function () {
-                        var bild = document.getElementById("scrollBild");
-
-                        var scrollTop = window.scrollY || window.pageYOffset;
-                        var docHeight = document.body.scrollHeight - window.innerHeight;
-                        var scrollProzent = scrollTop / docHeight;
-
-                        var maxTop = window.innerHeight - bild.offsetHeight;
-                        var neueTop = scrollProzent * maxTop;
-                        bild.style.top = neueTop + "px";
-                    });
-                </script>
-
-            </body>
-
-            </html>
-
-
-        </div>
-
-    </div>
+    
+    <img id="scrollBild" src="../Images/Player_3.png" alt="Bild" />
+    
     <footer class="footer-info">
     Mail: <a href="mailto:zock868@gmail.com">zock868@gmail.com</a> &nbsp;|&nbsp;
     Github: <a href="https://github.com/ZOCK8" target="_blank">ZOCK8</a> &nbsp;|&nbsp;
     Discord: <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
 </footer>
+<script>
+    window.addEventListener("scroll", function () {
+        var bild = document.getElementById("scrollBild");
+        var scrollTop = window.scrollY || window.pageYOffset;
+        var docHeight = document.body.scrollHeight - window.innerHeight;
+        var scrollProzent = docHeight > 0 ? scrollTop / docHeight : 0;
+        var maxTop = window.innerHeight - bild.offsetHeight;
+        var neueTop = scrollProzent * maxTop;
+        bild.style.top = neueTop + "px";
+    });
+</script>
+</body>
+</html>

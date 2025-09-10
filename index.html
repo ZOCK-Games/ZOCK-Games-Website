@@ -1,126 +1,115 @@
 <!DOCTYPE html>
 <html lang="de">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ZOCK-GAMES</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-
-<head>
-    <title>ZOCK-GAMES</title>
-    <Style>
+    <style>
         html,
         body {
             margin: 0;
             padding: 0;
+            background-image: url(Images/Background.png);
+            background-size: cover;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        body {
-            .navigationbar {
-                width: 100%;
-                height: 40px;
-                background-color: black;
-                margin: auto 80px;
-                position: fixed 0;
-                overflow: hidden;
-                margin: 0;
-                padding: 0;
-                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-                user-select: none;
-                display: flex;
-                z-index: 999;
-                position: fixed;
-                top: 0%;
-            }
+        .navigationbar {
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+            user-select: none;
+            display: flex;
+            z-index: 999;
+            position: fixed;
+            top: 0;
+        }
 
-            .HomeNav {
-                height: 0;
-                width: 100%;
-                color: azure;
-                font-size: 24px;
-                font-family: 'Silkscreen', sans-serif;
-                cursor: pointer;
-                user-select: none;
-            }
+        .HomeNav {
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            color: azure;
+            font-size: 24px;
+            font-family: 'Silkscreen', sans-serif;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
 
-            .headlinetext {
-                top: auto;
-                left: auto;
-                font-size: 56px;
-                color: rgb(220, 210, 194);
-                font-weight: bold;
-                font-family: "Silkscreen", sans-serif;
-            }
+        .HomeNav:hover {
+            color: lightblue;
+        }
 
-            .headlinebox {
-                width: 500px;
-                height: 80px;
-                background-color: rgb(35, 35, 35);
-                border-radius: 12px;
-                margin: 80px 80px;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            }
+        .headlinetext {
+            font-size: 56px;
+            color: rgb(220, 210, 194);
+            font-weight: bold;
+            font-family: "Silkscreen", sans-serif;
+        }
 
-            .player1 {
-                position: absolute;
-                left: 25%;
-                top: 2%;
-                width: 100;
-                height: 100px;
-                rotate: 20deg;
-                z-index: -1;
-            }
+        .headlinebox {
+            width: 500px;
+            height: 80px;
+            background-color: rgb(35, 35, 35);
+            border-radius: 12px;
+            margin: 80px auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
 
-            .player2 {
-                position: absolute;
-                left: 70%;
-                top: -3%;
-                width: 100;
-                height: 200px;
-                rotate: 200deg;
-                z-index: -1;
-                position: fixed;
-            }
-
-            .player4 {
-                position: absolute;
-                left: 29%;
-                top: 60%;
-                width: 100;
-                height: 200px;
-                rotate: -90deg;
-                z-index: -1;
-            }
-
-            .headline {
-                width: 600px;
-            }
-
-
-
-            .Infos {
-                position: absolute;
-                top: 70%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 640px;
-                height: 640px;
-                background-image:url(Images/Infos.png);
-            }
-            .InfoText{
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 600;
-                height: 600;
-                font-family: "Silkscreen", sans-serif;
-                color: aliceblue;
-            }
-            .box-button {
+        .player1, .player2, .player4 {
             position: absolute;
+            width: 100px;
+            z-index: -1;
+        }
+
+        .player1 { left: -50px; top: -20px; transform: rotate(20deg); }
+        .player2 { right: -50px; top: -50px; transform: rotate(200deg); }
+        .player4 { left: 50%; bottom: -150px; transform: translateX(-50%) rotate(-90deg); }
+
+        .Middel {
+            flex-grow: 1;
+        }
+
+        .Infos {
+            position: relative;
+            margin: 0 auto;
+            width: 640px;
+            height: 640px;
+            background-image: url(Images/Infos.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .InfoText {
+            position: absolute;
+            top: 30%;
             left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            font-family: "Silkscreen", sans-serif;
+            color: aliceblue;
+            font-size: 1.2em;
+        }
+
+        .box-button {
+            position: absolute;
             cursor: pointer;
             width: 35%;
             border: 4px solid black;
@@ -128,7 +117,6 @@
             padding-bottom: 10px;
             transition: 0.1s ease-in-out;
             user-select: none;
-            z-index: 9999;
             top: 45%;
             left: 33%;
         }
@@ -139,160 +127,129 @@
             padding: 3px 8px;
             font-family: 'Silkscreen', 'Pixelify Sans', monospace;
         }
-                .button span,
-        .buttongreen span {
+
+        .button span {
             color: aliceblue;
             font-size: 1.2em;
             letter-spacing: 1px;
         }
 
-        .box-button:active,
-        .box-button-green:active {
+        .box-button:active {
             padding: 0;
             margin-bottom: 10px;
             transform: translateY(10px);
         }
 
-
-
-
-            background-image: url(Images/Background.png);
-            text-align: center;
+        #scrollBild {
+            position: fixed;
+            top: 0;
+            right: -1%;
+            height: 200px;
+            width: 100px;
+            rotate: -90deg;
+            cursor: grab;
+            z-index: 1000;
         }
 
+        .footer-info {
+            width: 100%;
+            background: #111;
+            color: #fff;
+            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+            font-size: 1em;
+            padding: 12px 0;
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 9999;
+        }
 
-    </Style>
+        .footer-info a {
+            color: #7ecfff;
+            text-decoration: underline;
+            font-family: inherit;
+        }
+    </style>
 </head>
 
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
-<div class="navigationbar">
-    <a href="index.html" class="HomeNav"><u>Home</u></a>
-    <a href="Games/" class="HomeNav">Games</a>
-    <a href="Projekts/" class="HomeNav">Projekts</a>
-</div>
-
-
-
-    <div class="headline">
-        <div class="headlinebox">
-            <div class="headlinetext">ZOCK-GAMES</div>
-            <div class="funguy1"></div>
-            <img src="Images/Player_1.png" alt="player1" class="player1">
-            <img src="Images/Player_2.png" alt="player2" class="player2">
-
-
-
-            <img src="Images/Player_4.png" alt="player4" class="player4">
-        </div>
-
-        <div class="Middel">
-            <div class="Infos">
-                <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 </div>
-                    <div class="box-button">
-                        <div class="button">
-                            <a href="ZOCK-Games-Website/Jimpu/" target="_blank">
-                                <span><b>Jimpu</b></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <title>Bild scrollen</title>
-  <style>
-    #scrollBild {
-      position: fixed;
-      top: 0;
-      right: -1%; /* Hälfte des Bildes außerhalb */
-      height: 200px;
-      width: 100px;
-      rotate: -90deg;
-      cursor: grab;
-      z-index: 1000;
-    }
-  </style>
-</head>
-<body style="height:2000px;"> <!-- Höhe damit man scrollen kann -->
-
-  <img id="scrollBild" src="Images/Player_3.png" alt="Scroll-Anzeige" style="cursor: grab;" />
-
-  <script>
-let dragging = false;
-let offsetY = 0;
-
-const bild = document.getElementById("scrollBild");
-
-// Scroll-Funktion wie gehabt
-window.addEventListener("scroll", function () {
-    if (!dragging) {
-        const scrollTop = window.scrollY || window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollProzent = scrollTop / docHeight;
-        const maxTop = window.innerHeight - bild.offsetHeight;
-        const neueTop = scrollProzent * maxTop;
-        bild.style.top = neueTop + "px";
-    }
-});
-
-// Drag & Drop
-bild.addEventListener("mousedown", function (e) {
-    dragging = true;
-    offsetY = e.clientY - bild.getBoundingClientRect().top;
-    bild.style.cursor = "grabbing";
-    document.body.style.userSelect = "none";
-});
-
-document.addEventListener("mousemove", function (e) {
-    if (dragging) {
-        let neueTop = e.clientY - offsetY;
-        // Begrenzung: nicht aus dem Fenster ziehen
-        neueTop = Math.max(0, Math.min(window.innerHeight - bild.offsetHeight, neueTop));
-        bild.style.top = neueTop + "px";
-    }
-});
-
-document.addEventListener("mouseup", function () {
-    if (dragging) {
-        dragging = false;
-        bild.style.cursor = "grab";
-        document.body.style.userSelect = "";
-    }
-});
-</script>
-
-        </div>
-
+<body>
+    <div class="navigationbar">
+        <a href="./index.html" class="HomeNav"><u>Home</u></a>
+        <a href="./Games/index.html" class="HomeNav">Games</a>
+        <a href="./Projekts/index.html" class="HomeNav">Projekts</a>
     </div>
+
+    <div class="headlinebox">
+        <div class="headlinetext">ZOCK-GAMES</div>
+        <img src="Images/Player_1.png" alt="player1" class="player1">
+        <img src="Images/Player_2.png" alt="player2" class="player2">
+        <img src="Images/Player_4.png" alt="player4" class="player4">
+    </div>
+
+    <div class="Middel">
+        <div class="Infos">
+            <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 </div>
+            <div class="box-button">
+                <div class="button">
+                    <a href="Jimpu/index.html" target="_blank" style="color: aliceblue; text-decoration: none;">
+                        <span><b>Jimpu</b></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img id="scrollBild" src="Images/Player_3.png" alt="Scroll-Anzeige" />
+
     <footer class="footer-info">
         Mail: <a href="mailto:zock868@gmail.com">zock868@gmail.com</a> &nbsp;|&nbsp;
         Github: <a href="https://github.com/ZOCK8" target="_blank">ZOCK8</a> &nbsp;|&nbsp;
         Discord: <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
     </footer>
-<style>
-    .footer-info {
-        width: 100%;
-        background: #111;
-        color: #fff;
-        font-family: 'Silkscreen', 'Pixelify Sans', monospace;
-        font-size: 1em;
-        padding: 12px 0;
-        text-align: center;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        z-index: 9999;
-    }
-    .footer-info a {
-        color: #7ecfff;
-        text-decoration: underline;
-        font-family: inherit;
-    }
-</style>
+
+    <script>
+        let dragging = false;
+        let offsetY = 0;
+
+        const bild = document.getElementById("scrollBild");
+
+        // Scroll-Funktion
+        window.addEventListener("scroll", function () {
+            if (!dragging) {
+                const scrollTop = window.scrollY || window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollProzent = docHeight > 0 ? scrollTop / docHeight : 0;
+                const maxTop = window.innerHeight - bild.offsetHeight;
+                const neueTop = scrollProzent * maxTop;
+                bild.style.top = neueTop + "px";
+            }
+        });
+
+        // Drag & Drop
+        bild.addEventListener("mousedown", function (e) {
+            dragging = true;
+            offsetY = e.clientY - bild.getBoundingClientRect().top;
+            bild.style.cursor = "grabbing";
+            document.body.style.userSelect = "none";
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            if (dragging) {
+                let neueTop = e.clientY - offsetY;
+                neueTop = Math.max(0, Math.min(window.innerHeight - bild.offsetHeight, neueTop));
+                bild.style.top = neueTop + "px";
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (dragging) {
+                dragging = false;
+                bild.style.cursor = "grab";
+                document.body.style.userSelect = "";
+            }
+        });
+    </script>
 </body>
 
-
+</html>
