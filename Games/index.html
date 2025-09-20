@@ -21,6 +21,9 @@
             background-size: cover;
             text-align: center;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
             .navigationbar {
@@ -113,12 +116,6 @@
     cursor: pointer;
     position: relative;
     font-family: 'Silkscreen', sans-serif;
-
-
-
-    border-radius: 1em;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
 }
 
 
@@ -134,9 +131,8 @@
     background-image: url('../Images/LogoJimpu.png');
     background-size: cover;
     background-position: center;
-    border-radius: 1em 0 0 1em;
-    box-shadow: 20px 0px 0px rgba(0, 0, 0, 1);
 }
+
 
 /* Text in der Mitte */
 .content {
@@ -189,11 +185,11 @@
 
 <body>
 
-<div class="navigationbar">
-    <a href="../index.html" class="HomeNav"><u>Home</u></a>
-    <a href="./index.html" class="HomeNav">Games</a>
-    <a href="../Projekts/index.html" class="HomeNav">Projekts</a>
-</div>
+    <div class="navigationbar">
+        <a href="./" class="HomeNav"><u>Home</u></a>
+        <a href="./Games" class="HomeNav">Games</a>
+        <a href="./Projekts/" class="HomeNav">Projekts</a>
+    </div>
 
     <div class="headlinebox">
         <div class="headlinetext">GAMES</div>

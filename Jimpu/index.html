@@ -15,8 +15,15 @@
         }
 
         body {
+            margin: 0;
+            padding: 0;
             background-image: url(../Images/Background.png);
+            background-size: cover;
             text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .navigationbar {
@@ -210,11 +217,11 @@
 </head>
 
 <body>
-<div class="navigationbar">
-    <a href="../index.html" class="HomeNav"><u>Home</u></a>
-    <a href="../Games/index.html" class="HomeNav">Games</a>
-    <a href="../Projekts/index.html" class="HomeNav">Projekts</a>
-</div>
+    <div class="navigationbar">
+        <a href="./" class="HomeNav"><u>Home</u></a>
+        <a href="./Games" class="HomeNav">Games</a>
+        <a href="./Projekts/" class="HomeNav">Projekts</a>
+    </div>
 
     <div class="headline">
         <div class="headlinebox">
