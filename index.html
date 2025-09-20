@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ZOCK-GAMES</title>
+    
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,7 @@
 
     <style>
         html,
+        
         body {
             margin: 0;
             padding: 0;
@@ -22,6 +24,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            
         }
 
         .navigationbar {
@@ -107,34 +110,55 @@
             color: aliceblue;
             font-size: 1.2em;
         }
-
-        .box-button {
+        .box-button-green {
             position: absolute;
+            top: 101%;
+            left: 38%;
+            width: 25%;
             cursor: pointer;
-            width: 35%;
             border: 4px solid black;
             background-color: #963f3e;
             padding-bottom: 10px;
             transition: 0.1s ease-in-out;
             user-select: none;
-            top: 45%;
-            left: 33%;
+            z-index: 9999;
         }
 
-        .button {
+        .button-green {
             background-color: #72a11d;
-            border: 4px solid #288d0d;
-            padding: 3px 8px;
-            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+            border: 4px solid #28860f;
+            padding: 3px 8px
+        }
+        
+        .box-button-blue {
+            position: absolute;
+            top: 150%;
+            left: 35.5%;
+            width: 30%;
+            cursor: pointer;
+            border: 4px solid black;
+            background-color: rgb(21, 112, 112);
+            padding-bottom: 10px;
+            transition: 0.1s ease-in-out;
+            user-select: none;
+            z-index: 9999;
         }
 
-        .button span {
+        .button-blue {
+            background-color: #4fb9ce;
+            border: 4px solid #5fcde4;
+            padding: 3px 8px;
+        }
+
+        .buttonblue span,
+        .buttongreen span {
             color: aliceblue;
             font-size: 1.2em;
             letter-spacing: 1px;
         }
 
-        .box-button:active {
+        .box-button-blue:active,
+        .box-button-green:active {
             padding: 0;
             margin-bottom: 10px;
             transform: translateY(10px);
@@ -189,15 +213,30 @@
 
     <div class="Middel">
         <div class="Infos">
-            <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 </div>
-            <div class="box-button">
-                <div class="button">
-                    <a href="Jimpu/index.html" target="_blank" style="color: aliceblue; text-decoration: none;">
+            <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 
+
+
+                <div class="box-button-green">
+                <div class="button-green">
+                    <a href="/Jimpu/"  style="color: rgb(255, 255, 255); text-decoration: none;">
                         <span><b>Jimpu</b></span>
                     </a>
                 </div>
             </div>
+
+                <div class="box-button-blue">
+                <div class="button-blue">
+                    <a href="/AboutUS/"  style="color: rgb(222, 227, 235); text-decoration: none;">
+                        <span><b>About us</b></span>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+            </div>
         </div>
+        
+        
     </div>
 
     <img id="scrollBild" src="Images/Player_3.png" alt="Scroll-Anzeige" />
