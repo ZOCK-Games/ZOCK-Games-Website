@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>ZOCK-GAMES</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <style>
         html,
@@ -168,7 +171,7 @@
             border: 4px solid #044e16;
             padding: 3px 8px;
         }
-        
+
         .button span,
         .buttongreen span {
             color: aliceblue;
@@ -213,6 +216,38 @@
             text-decoration: underline;
             font-family: inherit;
         }
+
+        .Info-Panel {
+            position: absolute;
+            align-items: center;
+            position: absolute;
+            background-image: url(../Images/Map.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 2%;
+            text-align: 50%;
+            height: 200%;
+            width: 140%;
+            top: -20%;
+            left: -20%;
+            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+        }
+
+        .CloseButton {
+            background-image: url(../Images/CloseButton.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            position: absolute;
+            width: 15%;
+            height: 10.5%;
+            left: 90%;
+            top: -5%;
+            z-index: 9999;
+            font-size: 90px;
+            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
+
+        }
     </style>
 </head>
 
@@ -231,33 +266,63 @@
             <img src="../Images/Player_4.png" alt="player4" class="player4">
         </div>
 
-        <div class="Middel">
-            <div class="Infos">
-                <div class="InfoText">
-                    Hello I am ZOCK, <br>
-                    This is my first game<br>
-                    that will be published by <br>
-                    December 22, 2025
+        <div class="Infos">
+            <div class="InfoText">
+                Hello I am ZOCK, <br>
+                This is my first game<br>
+                that will be published by <br>
+                December 22, 2025
 
-                    <!-- Download-Button -->
-                    <div class="box-button">
-                        <div class="button">
-                            <a href="../404.html">
-                                <span><b>Download</b></span>
-                            </a>
-                        </div>
+                <!-- Download-Button -->
+                <div class="box-button">
+                    <div class="button">
+                        <a href="../404.html">
+                            <span><b>Download</b></span>
+                        </a>
                     </div>
+                </div>
 
-                    <!-- Github-Button -->
-                    <div class="box-button-green">
-                        <div class="buttongreen">
-                            <a href="./info.html" style="color: rgb(19, 41, 61); text-decoration: none;">
-                                <span><b>Info</b></span>
-                            </a>
-                        </div>
+                <!-- Info-Button -->
+                <div class="box-button-green">
+                    <div class="buttongreen"onclick="toggleUI()" style="color: rgb(19, 41, 61); text-decoration: none;">
+                            <span><b>Info</b></span>
+        
                     </div>
                 </div>
             </div>
+
+            <!-- UI -->
+
+
+            <div id="InfoPanel" class="Info-Panel" style="opacity: 1;transition: opacity 0.2s;">
+                         <div class="CloseButton" onclick="toggleUI()"></div>
+                <div style="font-size: 50px; color: #ffffff; background-color: #0e0e25;">Infos</div>
+                <div style="font-size: 30px;"><b>Jimpu</b> <br><br>
+                    <span style="font-size: 25px; color: #ffffff;"> 
+                    Is about a player landing on <br>
+                    a planet named Jimpo there the player <br>
+                    has to survive but theres one think <br>
+                    he doesn't know...
+                                        <!-- Download-Button -->
+                    <div class="box-button" style="top: 25%;">
+                        <div class="button">
+                            <a href="https://github.com/ZOCK8/Jimpu" target="_blank" style="color: rgb(19, 41, 61); text-decoration: none;">
+                                <span><b>Github</b></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-button-green" style="top: 32%;">
+                        <div class="buttongreen">
+                            <a href="/Jimpu/GDD" target="_blank" style="color: rgb(19, 41, 61); text-decoration: none;">
+                                <span><b>GDD</b></span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    </span>
+                     </div>
+            </div>
+
         </div>
 
         <img id="scrollBild" src="../Images/Player_3.png" alt="Bild">
@@ -268,17 +333,32 @@
         Github: <a href="https://github.com/ZOCK8" target="_blank">ZOCK8</a> &nbsp;|&nbsp;
         Discord: <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
     </footer>
+                <script>
+                    // Ui script
+                let UI = document.getElementById("InfoPanel");
+                function toggleUI() {
+                    if (UI.style.opacity == 0) {
+                        UI.style.opacity = 1; // sichtbar
+                        UI.style.display = "block"
+                    } else {
+                        UI.style.opacity = 0; // unsichtbar
+                        UI.style.display = "none"
+                    }
+                }
+
+            </script>
 
     <script>
-        window.addEventListener("scroll", function () {
-            var bild = document.getElementById("scrollBild");
-            var scrollTop = window.scrollY || window.pageYOffset;
-            var docHeight = document.body.scrollHeight - window.innerHeight;
-            var scrollProzent = scrollTop / docHeight;
-            var maxTop = window.innerHeight - bild.offsetHeight;
-            var neueTop = scrollProzent * maxTop;
-            bild.style.top = neueTop + "px";
-        });
+            window.addEventListener("scroll", function () {
+                var bild = document.getElementById("scrollBild");
+                var scrollTop = window.scrollY || window.pageYOffset;
+                var docHeight = document.body.scrollHeight - window.innerHeight;
+                var scrollProzent = scrollTop / docHeight;
+                var maxTop = window.innerHeight - bild.offsetHeight;
+                var neueTop = scrollProzent * maxTop;
+                bild.style.top = neueTop + "px";
+            });
     </script>
 </body>
+
 </html>
