@@ -4,166 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>ZOCK-GAMES | official website</title>
-    <meta name="description" content="ZOCK-GAMES is an indie game studio creating exciting games. Explore our projects, including Jimpu, and upcoming releases." />
+    <meta name="description"
+        content="ZOCK-GAMES is an indie game studio creating exciting games. Explore our projects, including Jimpu, and upcoming releases." />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css" />
 
     <style>
-        html,
-        
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url(Images/Background.png);
-            background-size: cover;
-            text-align: center;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            
-        }
-
-        .navigationbar {
-            width: 100%;
-            height: 40px;
-            background-color: black;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-            user-select: none;
-            display: flex;
-            z-index: 999;
-            position: fixed;
-            top: 0;
-        }
-
-        .HomeNav {
-            height: 40px;
-            line-height: 40px;
-            width: 100%;
-            color: azure;
-            font-size: 24px;
-            font-family: 'Silkscreen', sans-serif;
-            cursor: pointer;
-            user-select: none;
-            text-decoration: none;
-        }
-
-        .HomeNav:hover {
-            color: lightblue;
-        }
-
-        .headlinetext {
-            font-size: 56px;
-            color: rgb(220, 210, 194);
-            font-weight: bold;
-            font-family: "Silkscreen", sans-serif;
-        }
-
-        .headlinebox {
-            width: 500px;
-            height: 80px;
-            background-color: rgb(35, 35, 35);
-            border-radius: 12px;
-            margin: 80px auto;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            position: relative;
-        }
-
-        .player1, .player2, .player4 {
-            position: absolute;
-            width: 100px;
-            z-index: -1;
-        }
-
-        .player1 { left: -50px; top: -20px; transform: rotate(20deg); }
-        .player2 { right: -50px; top: -50px; transform: rotate(200deg); }
-        .player4 { left: 50%; bottom: -150px; transform: translateX(-50%) rotate(-90deg); }
-
-        .Middel {
-            flex-grow: 1;
-        }
-
-        .Infos {
-            position: relative;
-            margin: 0 auto;
-            width: 640px;
-            height: 640px;
-            background-image: url(Images/Infos.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .InfoText {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            font-family: "Silkscreen", sans-serif;
-            color: aliceblue;
-            font-size: 1.2em;
-        }
-        .box-button-green {
-            position: absolute;
-            top: 101%;
-            left: 38%;
-            width: 25%;
-            cursor: pointer;
-            border: 4px solid black;
-            background-color: #963f3e;
-            padding-bottom: 10px;
-            transition: 0.1s ease-in-out;
-            user-select: none;
-            z-index: 9999;
-        }
-
-        .button-green {
-            background-color: #72a11d;
-            border: 4px solid #28860f;
-            padding: 3px 8px
-        }
-        
-        .box-button-blue {
-            position: absolute;
-            top: 150%;
-            left: 35.5%;
-            width: 30%;
-            cursor: pointer;
-            border: 4px solid black;
-            background-color: rgb(21, 112, 112);
-            padding-bottom: 10px;
-            transition: 0.1s ease-in-out;
-            user-select: none;
-            z-index: 9999;
-        }
-
-        .button-blue {
-            background-color: #4fb9ce;
-            border: 4px solid #5fcde4;
-            padding: 3px 8px;
-        }
-
-        .buttonblue span,
-        .buttongreen span {
-            color: aliceblue;
-            font-size: 1.2em;
-            letter-spacing: 1px;
-        }
-
-        .box-button-blue:active,
-        .box-button-green:active {
-            padding: 0;
-            margin-bottom: 10px;
-            transform: translateY(10px);
-        }
-
         #scrollBild {
             position: fixed;
             top: 0;
@@ -174,121 +26,84 @@
             cursor: grab;
             z-index: 1000;
         }
-
-        .footer-info {
-            width: 100%;
-            background: #111;
-            color: #fff;
-            font-family: 'Silkscreen', 'Pixelify Sans', monospace;
-            font-size: 1em;
-            padding: 12px 0;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            z-index: 9999;
-        }
-
-        .footer-info a {
-            color: #7ecfff;
-            text-decoration: underline;
-            font-family: inherit;
-        }
     </style>
 </head>
 
 <body>
+
+
     <div class="navigationbar">
         <a href="/" class="HomeNav"><u>Home</u></a>
         <a href="/Games/" class="HomeNav">Games</a>
-        <a href="/Projekts/" class="HomeNav">Projekts</a>
+        <a href="/Projekts/" class="HomeNav">Projects</a>
     </div>
 
     <div class="headlinebox">
         <div class="headlinetext">ZOCK-GAMES</div>
-        <img src="Images/Player_1.png" alt="player1" class="player1">
-        <img src="Images/Player_2.png" alt="player2" class="player2">
-        <img src="Images/Player_4.png" alt="player4" class="player4">
     </div>
+    <img src="Images/Player_1.png" alt="player1" class="PlayerImage"
+        style="left: 76%; width: 5%; rotate: 175deg; top: -2%; position:absolute;">
+    <img src="Images/Player_4.png" alt="player2" class="PlayerImage"
+        style="width: 5%;top: 30%; left: 33%; z-index: -1; transform: translateX(-50%) rotate(-100deg); position:absolute;">
 
-    <div class="Middel">
-        <div class="Infos">
-            <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game it will be probably out by December 22 2025 
+    <div class="Infos">
+        <div class="InfoText">Hello this is ZOCK Games <br> by ZOCK <br> currently i work on my first game<br> it
+            will
+            be probably out <br>by December 22 2025
 
 
-                <div class="box-button-green">
-                <div class="button-green">
-                    <a href="/Jimpu/"  style="color: rgb(255, 255, 255); text-decoration: none;">
-                        <span><b>Jimpu</b></span>
-                    </a>
+            <div class="box-button" style="top: 30%; background-color: #963f3e;">
+                <div class="button-text">
+                    <a href="/Jimpu/" style="color: rgb(255, 255, 255); text-decoration: none;">
+
+                        <div class="tooltip-wrapper">
+                            JIMPU
+                            <div class="tooltip">Our first BIG Game!</div>
+                        </div>
                 </div>
+                </a>
             </div>
 
-                <div class="box-button-blue">
-                <div class="button-blue">
-                    <a href="/AboutUs/"  style="color: rgb(222, 227, 235); text-decoration: none;">
+            <div class="box-button" style="top: 45%; background-color: #0F2854">
+                <div class="button-text" style="  border: 4px solid #1C4D8D; background-color : #4988C4;">
+
+                    <a href="/AboutUs/" style="color: rgb(222, 227, 235); text-decoration: none;">
                         <span><b>About us</b></span>
                     </a>
                 </div>
             </div>
 
-            </div>
-            </div>
         </div>
-        
-        
     </div>
 
-    <img id="scrollBild" src="Images/Player_3.png" alt="Scroll-Anzeige" />
+    <div class="hole64x64" style="top: 100%;">
+        <div style="top: 0%; left: 0%; position: relative;" class="imageShowCaseGame"></div>
+    </div>
+
+    <div class="hole64x64" style="top: 130%; right: 10%;">
+        <div style="transform: scale(0.7); top: 3%; position: relative;" class="imageShowCaseNews"></div>
+        <a href="">
+            <div style="top: -20%;   transform: translateX(-50%); ; position: relative;" class="box-button">
+                <div class="button-text" style="color: #ffffff;"><b>News</b></div>
+            </div>
+        </a>
+    </div>
+
+    </div>
+
 
     <footer class="footer-info">
         Mail: <a href="mailto:zock868@gmail.com">zock868@gmail.com</a> &nbsp;|&nbsp;
         Github: <a href="https://github.com/ZOCK8" target="_blank">ZOCK8</a> &nbsp;|&nbsp;
-        Discord: <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
+        Discord: <a href="https://discord.gg/wxDANpJueU" target="_blank">Discord</a>
     </footer>
 
-    <script>
-        let dragging = false;
-        let offsetY = 0;
+    <img class="PlayerImage" id="scrollImage" src="Images/Player_3.png" alt="Scroll-Anzeige"
+        style="width: 5%; height: 5%; transform: translateX(-50%) rotate(-90deg)" />
+    <script src="/Scripts/ScrollImageScript.js"></script>
+    <script src="/Scripts/ImageShowCaseGame.js"></script>
+    <script src="/Scripts/ImageShowCaseNews.js"></script>
 
-        const bild = document.getElementById("scrollBild");
-
-        // Scroll-Funktion
-        window.addEventListener("scroll", function () {
-            if (!dragging) {
-                const scrollTop = window.scrollY || window.pageYOffset;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollProzent = docHeight > 0 ? scrollTop / docHeight : 0;
-                const maxTop = window.innerHeight - bild.offsetHeight;
-                const neueTop = scrollProzent * maxTop;
-                bild.style.top = neueTop + "px";
-            }
-        });
-
-        // Drag & Drop
-        bild.addEventListener("mousedown", function (e) {
-            dragging = true;
-            offsetY = e.clientY - bild.getBoundingClientRect().top;
-            bild.style.cursor = "grabbing";
-            document.body.style.userSelect = "none";
-        });
-
-        document.addEventListener("mousemove", function (e) {
-            if (dragging) {
-                let neueTop = e.clientY - offsetY;
-                neueTop = Math.max(0, Math.min(window.innerHeight - bild.offsetHeight, neueTop));
-                bild.style.top = neueTop + "px";
-            }
-        });
-
-        document.addEventListener("mouseup", function () {
-            if (dragging) {
-                dragging = false;
-                bild.style.cursor = "grab";
-                document.body.style.userSelect = "";
-            }
-        });
-    </script>
 </body>
 
 </html>
