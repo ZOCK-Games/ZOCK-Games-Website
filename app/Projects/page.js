@@ -5,11 +5,14 @@ export default function Home() {
       <div className="headlinebox">
         <div className="headlinetext">PROJECTS</div>
       </div>
-      <div id="projekt-cards-container" style={{position: "relative", top: "15%"}}>
+      <div
+        id="projekt-cards-container"
+        style={{ position: "sticky", top: "18%" }}
+      >
         <div className="projekt-card">
-          Jimpu Project by ZOCK-GAMES by ZOCK
+          <b>Jimpu</b>, a Project by ZOCK-GAMES by ZOCK
           <a
-            href="/Jimpu/"
+            href="/Games/Jimpu/"
             style={{ color: "aliceblue", textDecoration: "none" }}
           >
             <span>
@@ -17,6 +20,17 @@ export default function Home() {
             </span>
           </a>
         </div>
+
+        <div className="projekt-card">
+          <a
+            href="/Projects/DialogSystem/"
+            style={{ color: "aliceblue", textDecoration: "none" }}
+          >
+            <b>Z Dialog System by ZOCK-GAMES</b>, <br></br>
+            Create manage, and trigger dialogues.
+          </a>
+        </div>
+
         <div className="projekt-card">
           Dinosaur, Avoiding Fate Project by ZOCK, Marrariche Lopes, Prince
           Yarjack

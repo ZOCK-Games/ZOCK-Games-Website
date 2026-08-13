@@ -3,9 +3,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("/Images/Background.png");
+  background-image: url("/Images/BackgroundRepeat.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   text-align: center;
   overflow-x: hidden;
   min-height: 100vh;
@@ -370,4 +370,138 @@ body {
   background-size: cover;
   background-position: center;
   transform: scale(0.9);
+}
+
+/* Mobile-only fixes (<=768px) - minimal, do not change Desktop */
+@media (max-width: 768px) {
+  html, body, #__next { width: 100%; overflow-x: hidden; }
+  /* leave extra bottom padding so footer + cookie banners don't cover content */
+  body { padding-bottom: 160px; }
+
+  /* Neutralize positioned, floating UI so text isn't overlapped on mobile.
+     Also force natural vertical flow with gaps/padding so items don't cluster. */
+  .Info-Panel,
+  .Infos,
+  .content,
+  .CloseButton,
+  .PlayerImage,
+  .hole64x64,
+  .card,
+  .imageShowCaseGame,
+  .imageShowCaseNews,
+  .projekt-card {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0.8rem 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Make the main info containers stack and have spacing */
+  .Infos {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 12px !important;
+    height: auto !important;
+  }
+  .Info-Panel {
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
+  .InfoText {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    padding: 6px 0 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+
+  /* Stack major page blocks vertically and add breathing room */
+  .Middel,
+  .headline,
+  .Infos {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure buttons are separated and readable */
+  .box-button { margin: 12px auto !important; }
+  .box-button + .box-button { margin-top: 8px !important; }
+
+  /* Prevent any stray z-index or transforms hiding content */
+  .Info-Panel, .Infos, .projekt-card, .card, .content { z-index: auto !important; }
+
+  /* Stack and widen action buttons for thumb reach, with vertical spacing */
+  .box-button {
+    position: static !important;
+    display: block !important;
+    width: calc(100% - 32px) !important;
+    max-width: 720px !important;
+    margin: 12px auto !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+    z-index: 1001 !important;
+  }
+  .box-button .button-text { width: 100%; text-align: center; display: block; }
+
+  /* Make card container flow vertically to avoid horizontal scroll and cluster */
+  .card-container { gap: 16px; padding: 0 12px; flex-direction: column !important; flex-wrap: nowrap !important; overflow-x: visible !important; }
+  .card { margin: 14px auto !important; width: calc(100% - 28px) !important; }
+
+  /* Don't distort card background artwork: use contain so images aren't cropped */
+  .card span {
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    height: auto !important;
+    min-height: 180px !important;
+  }
+
+  /* Headline scaling and wrap */
+  .headlinebox { width: 94% !important; white-space: normal !important; font-size: clamp(18px, 6vw, 36px) !important; margin-top: 56px; }
+
+  /* Footer remains fixed; ensure content above it is visible by body padding.
+     Cookie banner / projekt-card often used as bottom bar; make sure it is readable */
+  .footer-info { position: fixed !important; left: 0 !important; bottom: 0 !important; width: 100% !important; padding: 10px 8px !important; box-sizing: border-box !important; }
+  .projekt-card { box-sizing: border-box; padding: 12px !important; margin-bottom: 12px !important; }
+
+  /* Projects: neutralize sticky container on mobile so header doesn't overlap content */
+  #projekt-cards-container { position: static !important; top: auto !important; }
+
+  /* Tooltips should wrap and not overflow */
+  .tooltip { left: 8px !important; transform: none !important; bottom: auto !important; top: auto !important; white-space: normal !important; max-width: calc(100% - 32px) !important; z-index: 12000 !important; }
+
+  /* Ensure nothing uses overflow:hidden hiding children */
+  * { -webkit-overflow-scrolling: touch; }
+
+  /* Hole / News button: center and make background transparent on mobile */
+  .hole64x64 a .box-button {
+    position: static !important;
+    margin: 10px auto !important;
+    width: calc(100% - 48px) !important;
+    max-width: 360px !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .hole64x64 a .box-button .button-text {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    padding: 8px 0 !important;
+  }
 }

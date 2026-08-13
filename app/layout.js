@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
         <div className="navigationbar">
           <a href="/" className="HomeNav">Home</a>
           <a href="/Games" className="HomeNav">Games</a>
-          <a href="/Projekts" className="HomeNav">Projects</a>
+          <a href="/Projects" className="HomeNav">Projects</a>
           {user ? (
             <div
               className="HomeNav"
